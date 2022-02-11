@@ -5,7 +5,9 @@ const createUser = async (req, res) => {
 
   const newUser = await User.createUser(displayName, email, password, image);
 
-  return res.status(200).json(newUser);
+  if (newUser.message) return res.status(newUser.code).json({ message: newUser.message });
+
+  return res.status(201).json(newUser);
 };
 
 module.exports = {
