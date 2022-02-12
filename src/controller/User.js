@@ -25,7 +25,7 @@ const createUser = async (req, res) => {
 const checkLogin = async (req, res) => {
   const { email } = req.body;
 
-  const user = User.checkLogin(email);
+  const user = await User.checkLogin(email);
 
   if (user.message) return res.status(user.code).json({ message: user.message });
 

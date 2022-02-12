@@ -16,7 +16,7 @@ userRoutes.post(
   isValidLoginEmail,
   isValidLoginPassword,
   checkLogin,
-  );
+);
 
 module.exports = {
   userRoutes,
