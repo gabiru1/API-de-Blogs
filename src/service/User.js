@@ -19,7 +19,14 @@ const checkLogin = async (email) => {
   return user;
 };
 
+const getAllUser = async () => {
+  const users = await User.findAll();
+
+  return users;
+};
+
 module.exports = {
   createUser,
   checkLogin,
+  getAllUser,
 };

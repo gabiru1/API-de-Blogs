@@ -34,7 +34,14 @@ const checkLogin = async (req, res) => {
   res.status(200).json(token);
 };
 
+const getAllUser = async (_req, res) => {
+  const users = await User.getAllUser();
+
+  return res.status(200).json(users);
+};
+
 module.exports = {
   createUser,
   checkLogin,
+  getAllUser,
 };
