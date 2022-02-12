@@ -10,7 +10,7 @@ const createUser = async (displayName, email, password, image) => {
 };
 
 const checkLogin = async (email) => {
-  const user = User.findOne({ where: { email } });
+  const user = await User.findOne({ where: { email } });
 
   console.log(user);
 
