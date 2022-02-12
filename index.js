@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/user', userRoutes);
+app.use(userRoutes);
 
 app.listen(3000, () => console.log('ouvindo porta 3000!'));
 

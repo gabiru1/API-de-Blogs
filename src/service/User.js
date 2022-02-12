@@ -9,6 +9,17 @@ const createUser = async (displayName, email, password, image) => {
   return newUser;
 };
 
+const checkLogin = async (email) => {
+  const user = User.findOne({ where: { email } });
+
+  console.log(user);
+
+  if (!user) return { code: 400, message: 'Invalid fields' };
+
+  return user;
+};
+
 module.exports = {
   createUser,
+  checkLogin,
 };
