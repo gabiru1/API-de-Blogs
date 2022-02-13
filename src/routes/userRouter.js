@@ -1,5 +1,5 @@
 const express = require('express');
-const { createUser, checkLogin, getAllUser } = require('../controller/User');
+const { createUser, checkLogin, getAllUser, getUserById } = require('../controller/User');
 const { isValidName } = require('../middlewares/isValidName');
 const { isValidEmail } = require('../middlewares/isValidEmail');
 const { isValidPassword } = require('../middlewares/isValidPassword');
@@ -12,6 +12,8 @@ const userRoutes = express.Router();
 userRoutes.post('/user', isValidName, isValidEmail, isValidPassword, createUser);
 
 userRoutes.get('/user', isValidToken, getAllUser);
+
+userRoutes.get('/user/:id', isValidToken, getUserById);
 
 userRoutes.post(
   '/login',
