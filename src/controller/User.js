@@ -16,7 +16,7 @@ const createUser = async (req, res) => {
 
   const token = jwt.sign({ data: newUser.dataValues.id }, process.env.JWT_SECRET, jwtConfig);
 
-  return res.status(201).json(token);
+  return res.status(201).json({ token });
 };
 
 const checkLogin = async (req, res) => {
@@ -28,7 +28,7 @@ const checkLogin = async (req, res) => {
 
   const token = jwt.sign({ data: user.dataValues.id }, process.env.JWT_SECRET, jwtConfig);
 
-  return res.status(200).json(token);
+  return res.status(200).json({ token });
 };
 
 const getAllUser = async (_req, res) => {
