@@ -12,8 +12,6 @@ const createUser = async (displayName, email, password, image) => {
 const checkLogin = async (email) => {
   const user = await User.findOne({ where: { email } });
 
-  console.log(user);
-
   if (!user) return { code: 400, message: 'Invalid fields' };
 
   return user;
