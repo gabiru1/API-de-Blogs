@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     updated: DataTypes.DATE,
   },
   { timestamps: true, createdAt: 'published', updatedAt: 'updated' }); // Eslint -> arrow function 20 linhas
-  BlogPost.associeate = (models) => {
+  BlogPost.associate = (models) => {
     BlogPost.belongsTo(models.User, {
       foreignKey: 'userId', as: 'user',
     });
